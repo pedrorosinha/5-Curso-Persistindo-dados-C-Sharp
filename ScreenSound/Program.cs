@@ -4,7 +4,14 @@ using ScreenSound.Modelos;
 
 try
 {
-    var artistaDAL = new ArtistaDAL();
+    var context = new ScreenSoundContext();
+    var artistaDAL = new ArtistaDAL(context);
+
+    var novoArtista = new Artista("Gilberto Gil", "Gilberto Passos Gil Moreira é um cantor, compositor, multi-instrumentista.") { Id = 1003 };
+
+    //artistaDAL.Adicionar(novoArtista);
+    //artistaDAL.atualizar(novoArtista);
+    artistaDAL.Deletar(novoArtista);
 
     var listaArquivos = artistaDAL.Listar();
 
