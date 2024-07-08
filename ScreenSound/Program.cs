@@ -11,7 +11,10 @@ try
 
     //artistaDAL.Adicionar(novoArtista);
     //artistaDAL.atualizar(novoArtista);
-    artistaDAL.Deletar(novoArtista);
+    //artistaDAL.Deletar(novoArtista);
+
+    var artistaRecuperado = artistaDAL.RecuperarPeloNome("Djavan");
+    Console.WriteLine(artistaRecuperado);
 
     var listaArquivos = artistaDAL.Listar();
 
