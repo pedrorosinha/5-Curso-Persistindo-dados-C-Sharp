@@ -1,8 +1,25 @@
 ﻿using ScreenSound.Banco;
 using ScreenSound.Menus;
+using ScreenSound.Modelos;
 
 var context = new ScreenSoundContext();
 var artistaDAL = new ArtistaDAL(context);
+var musicaDAL = new MusicaDAL(context);
+
+var musicaNova = new Musica("Fuel") { Id = 2 };
+var musica2 = new Musica("One");
+var musica3 = new Musica("Enter Sandman");
+musicaDAL.Adicionar(musica3);
+//musicaDAL.Atualizar(musicaNova);
+//musicaDAL.Deletar(musicaNova);
+
+var listaDeMusicas = musicaDAL.Listar();
+foreach (var musica in listaDeMusicas)
+{
+    Console.WriteLine(musica);
+}
+
+return;
 
 Dictionary<int, Menu> opcoes = new();
 opcoes.Add(1, new MenuRegistrarArtista());
