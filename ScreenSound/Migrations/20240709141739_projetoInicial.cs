@@ -5,7 +5,7 @@
 namespace ScreenSound.Migrations
 {
     /// <inheritdoc />
-    public partial class projetoIncial : Migration
+    public partial class projetoInicial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
