@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ScreenSound.API.Requests;
+using ScreenSound.API.Response;
 using ScreenSound.Banco;
 using ScreenSound.Modelos;
 
@@ -54,5 +55,15 @@ public static class MusicasExtensions
             dal.Atualizar(musicaAAtualizar);
             return Results.Ok();
         });
+    }
+
+    private static ICollection<MusicaResponse> EntityListToResponseList(IEnumerable<Musica> musicaList)
+    {
+        return musicaList.Select(a => EntityToResponse(a)).ToList();
+    }
+
+    private static MusicaResponse EntityToResponse(Musica musica)
+    {
+        return new MusicaResponse(musica.Id, musica.Nome!, musica.Artista!.Id, musica.Artista.Nome);
     }
 }
