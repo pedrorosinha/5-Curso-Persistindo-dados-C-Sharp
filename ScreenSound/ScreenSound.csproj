@@ -25,4 +25,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ScreenSound.Shared\ScreenSound.Shared.csproj" />
+  </ItemGroup>
+
 </Project>
